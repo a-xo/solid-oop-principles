@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ProductTest {
     @Test
     public void itShouldCalculatePriceWithTax() {
-        assertEquals(0.2,
+        assertEquals(1.2,
                 new Product("name", 1.0).calculatePriceWithTax(Country.FRANCE));
     }
 

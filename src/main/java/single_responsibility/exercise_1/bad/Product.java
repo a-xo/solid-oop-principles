@@ -15,10 +15,10 @@ public class Product {
 
     public double calculatePriceWithTax(Country country) {
         return switch (country) {
-            case GERMANY -> this.price * VAT_GERMANY;
-            case SPAIN -> this.price * VAT_SPAIN;
-            case UK ->  this.price * VAT_UK;
-            case FRANCE ->  this.price * VAT_FRANCE;
+            case GERMANY -> this.price + this.price * VAT_GERMANY;
+            case SPAIN -> this.price + this.price * VAT_SPAIN;
+            case UK ->  this.price + this.price * VAT_UK;
+            case FRANCE ->  this.price + this.price * VAT_FRANCE;
         };
     }
 
