@@ -1,20 +1,12 @@
 package single_responsibility.exercise_1.bad;
 
-public class Product {
-    private final String name;
-    private final double price;
+  public record Product(String name, double price) {
 
-    public Product(String name, double price) {
-        this.name = name;
-        this.price = price;
+    public String getName() {
+      return name;
     }
 
-    public double calculatePriceWithTax(Country country) {
-        return this.price * (1 + country.getTaxAmount());
+    public double getPrice() {
+      return price;
     }
-
-    public double calculateTotalPriceWithTaxForOrder(int quantity, Country country) {
-        return quantity * calculatePriceWithTax(country);
-    }
-
-}
+  }
