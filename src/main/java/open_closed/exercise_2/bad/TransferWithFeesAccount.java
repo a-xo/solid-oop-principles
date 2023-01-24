@@ -2,27 +2,11 @@ package open_closed.exercise_2.bad;
 
 import java.util.UUID;
 
-public class TransferWithFeesAccount {
+public class TransferWithFeesAccount extends Account{
     private static final double TRANSFER_FEE = 5;
-    private final UUID accountId;
-    private double balance;
 
     public TransferWithFeesAccount(double balance) {
-        this.balance = balance;
-        accountId = UUID.randomUUID();
-    }
-
-    public UUID getAccountId() {
-        return accountId;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public double deposit(double amount) {
-        balance += amount;
-        return balance;
+        super(balance);
     }
 
     public double withdraw(double amount) {
@@ -32,34 +16,6 @@ public class TransferWithFeesAccount {
     }
 
     public double applyInterest(int numberOfMonths) {
-        return balance;
-    }
-
-    public double transfer(double amount, BasicAccount toAccount){
-        double amountAfterFees = amount + TRANSFER_FEE;
-        balance -= amountAfterFees;
-        toAccount.deposit(amount);
-        return balance;
-    }
-
-    public double transfer(double amount, CheckingAccount toAccount){
-        double amountAfterFees = amount + TRANSFER_FEE;
-        balance -= amountAfterFees;
-        toAccount.deposit(amount);
-        return balance;
-    }
-
-    public double transfer(double amount, MonthlyInterestAccount toAccount){
-        double amountAfterFees = amount + TRANSFER_FEE;
-        balance -= amountAfterFees;
-        toAccount.deposit(amount);
-        return balance;
-    }
-
-    public double transfer(double amount, YearlyInterestAccount toAccount){
-        double amountAfterFees = amount + TRANSFER_FEE;
-        balance -= amountAfterFees;
-        toAccount.deposit(amount);
         return balance;
     }
 }

@@ -54,5 +54,4 @@ public class BankCustomer {
 
         return uuids;
     }
-
 }
