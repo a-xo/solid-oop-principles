@@ -1,6 +1,6 @@
 package interface_segregation.bad;
 
-public class Cat implements Animal{
+public class Cat implements Animal, Communicable, Walkable {
     @Override
     public String nameOfAnimal() {
         return "cat";
@@ -12,27 +12,8 @@ public class Cat implements Animal{
     }
 
     @Override
-    public String fly() {
-        return null;
-    }
-
-    @Override
-    public String swim() {
-        return null;
-    }
-
-    @Override
-    public String bark() {
-        return null;
-    }
-
-    @Override
-    public String quack() {
-        return null;
-    }
-
-    @Override
-    public String meow() {
+    public String talk() {
         return "meow!";
     }
+
 }

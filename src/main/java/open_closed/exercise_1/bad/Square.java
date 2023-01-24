@@ -9,9 +9,9 @@ public class Square extends Shape {
         this.side = side;
     }
 
-    public double getSide() {
-        return side;
-    }
+//    public double getSide() {
+//        return side;
+//    }
 
     @Override
     public double getArea() {
